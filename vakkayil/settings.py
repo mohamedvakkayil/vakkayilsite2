@@ -27,8 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'vakkayil.com', 
-    'www.vakkayil.com'
-    'vakkayil2.azurewebsites.net'
+    'www.vakkayil.com',
+    'vakkayil2.azurewebsites.net',
 ]
 
 
