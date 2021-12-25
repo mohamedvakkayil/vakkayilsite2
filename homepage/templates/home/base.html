@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,18 @@
     <title>VAKKAYIL</title>
 </head>
 <body>
+    <nav class="navbar sticky-top navbar-dark navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'hom:index' %}">
+            <!-- <img src=" {% static 'home/images/brand.png' %} " alt="" width="30" height="24" class="d-inline-block align-text-top"> -->
+            VAKKAYIL
+          </a>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
     {% block content %}
           
 
