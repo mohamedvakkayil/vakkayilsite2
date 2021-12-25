@@ -23,12 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-hmy1x0@+m1z)%cnklk3ibk-^(pn@avi!zcg_c*#4cviz#20d6c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*',
-    'vakkayil.com', 
+ALLOWED_HOSTS = [
+    'vakkayil.com',
+    '127.0.0.1', 
     'www.vakkayil.com',
-    'vakkayil2.azurewebsites.net',
+    'vakkayil4.azurewebsites.net',
 ]
 
 
@@ -41,10 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'homepage'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -120,6 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_STORAGE='whitenoise.storage.CompressManifestStaticFilesStorage'
+STATIC_ROOT = BASE_DIR/ 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
